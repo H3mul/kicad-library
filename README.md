@@ -16,9 +16,12 @@ Once installed, the symbols will be available in the symbol chooser under the li
 
 ## Currently Added Symbols
 - ESP32-C3_Super_Mini
+- ESP32_30Pin
 - GY-MAX4466_mic_module
 - HW-373 Charge Controller
 - MT3608_Boost_Converter
+- SSD1306_Display
+- W5500
 - WS2812B_LED_Strip
 ## Updating the Symbol List
 
