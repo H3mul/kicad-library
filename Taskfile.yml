@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  list-symbols:
+    desc: Generate a list of symbols in the library
+    cmds:
+      - grep -oP '^\s{0,1}\(symbol "\K[^"]+' components.kicad_sym
+  update-readme:
+    desc: Update the README with the current list of symbols
+    cmds:
+      - sed -i '/^## Currently Added Symbols$/,/^## /{ /^## Currently Added Symbols$/!{ /^## /!d } }' README.md
+      - grep -oP '^[ \t]{0,1}\(symbol "\K[^"]+' components.kicad_sym | sed 's/^/- /' > temp
+      - sed -i '/^## Currently Added Symbols$/r temp' README.md
+      - rm temp
